@@ -272,6 +272,35 @@
             margin-left: 5px;
         }
         
+        .tooltip::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        .tooltip:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Tooltip arrow */
+        .tooltip:hover::after {
+            background: #0056b3;
+        }
+        
         .alert-warning {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
@@ -943,15 +972,15 @@
                         <h4>${model.name} Model</h4>
                         <div class="metric">
                             <span>Monthly Revenue:</span>
-                            <span class="value">${formatNumber(model.revenue)} / Rp ${formatNumber(model.revenue * exchangeRate)}</span>
+                            <span class="value">$${formatNumber(model.revenue)} / Rp ${formatNumber(model.revenue * exchangeRate)}</span>
                         </div>
                         <div class="metric">
                             <span>Monthly Cost:</span>
-                            <span class="value">${formatNumber(model.cost)} / Rp ${formatNumber(model.cost * exchangeRate)}</span>
+                            <span class="value">$${formatNumber(model.cost)} / Rp ${formatNumber(model.cost * exchangeRate)}</span>
                         </div>
                         <div class="metric">
                             <span>Monthly Profit:</span>
-                            <span class="value ${statusClass}">${formatNumber(model.profit)} / Rp ${formatNumber(model.profit * exchangeRate)}</span>
+                            <span class="value ${statusClass}">$${formatNumber(model.profit)} / Rp ${formatNumber(model.profit * exchangeRate)}</span>
                         </div>
                         <div class="metric">
                             <span>Profit Margin:</span>
@@ -959,11 +988,11 @@
                         </div>
                         <div class="metric">
                             <span><span class="tooltip" data-tooltip="Average Revenue Per User - monthly revenue divided by total customers">ARPU</span>:</span>
-                            <span class="value">${model.arpu.toFixed(2)} / Rp ${formatNumber(model.arpu * exchangeRate)}</span>
+                            <span class="value">$${model.arpu.toFixed(2)} / Rp ${formatNumber(model.arpu * exchangeRate)}</span>
                         </div>
                         <div class="metric">
                             <span>Annual Profit:</span>
-                            <span class="value ${statusClass}">${formatNumber(model.profit * 12)} / Rp ${formatNumber(model.profit * 12 * exchangeRate)}</span>
+                            <span class="value ${statusClass}">$${formatNumber(model.profit * 12)} / Rp ${formatNumber(model.profit * 12 * exchangeRate)}</span>
                         </div>
                     </div>
                 `;
