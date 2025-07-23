@@ -1,0 +1,25 @@
+{
+  "name": "akunindo-pricing-tool",
+  "version": "1.0.0",
+  "description": "AkunIndo Business Model Analysis Tool",
+  "homepage": "https://akunindo.github.io/akunindo-pricing-tool/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AkunIndo/akunindo-pricing-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AkunIndo/akunindo-pricing-tool/issues"
+  },
+  "scripts": {
+    "serve": "npx serve .",
+    "dev": "npx live-server --port=8080 --open=index.html",
+    "start": "npx http-server . -p 8000 -o",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": ["pricing", "business-model", "analysis", "saas", "indonesia"],
+  "author": "AkunIndo",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
