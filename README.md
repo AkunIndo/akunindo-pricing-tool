@@ -2,6 +2,9 @@
 
 Business model analysis tool for AkunIndo receipt processing service.
 
+## 🌐 Live Demo
+**https://akunindo.github.io/akunindo-pricing-tool/**
+
 ## 🚀 Quick Start
 
 ### Option 1: Using `serve` (Recommended)
